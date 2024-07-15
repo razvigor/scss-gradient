@@ -1,0 +1,96 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  background-color: #000435;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+p {
+  margin: auto;
+  color: #000435;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.container {
+  width: 100%;
+  padding: 0 20px;
+}
+@media screen and (min-width: 1160px) {
+  .container {
+    width: 980px;
+    padding: 0;
+    margin: 50px auto;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+.gradient {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.gradient > div {
+  flex: 1 1 0;
+  height: 260px;
+  border: 1px solid #fff;
+  display: flex;
+  min-width: 260px;
+}
+.gradient__linear {
+  background-image: linear-gradient(-45deg, #f30ab9, #0ce680);
+}
+.gradient__repeat--linear {
+  background-image: repeating-linear-gradient(-45deg, #f30ab9, #f30ab9 10%, #0ce680 10%, #0ce680 20%);
+}
+.gradient__radial {
+  background-image: radial-gradient(circle at 50%, #f30ab9, #0ce680);
+}
+.gradient__repeat--radial {
+  background-image: repeating-radial-gradient(circle at 50%, #f30ab9, #f30ab9 10%, #0ce680 10%, #0ce680 20%);
+}
+.gradient__conic {
+  background-image: conic-gradient(#f30ab9 90deg, #0ce680 90deg 180deg, #0c3edf 180deg 270deg, #f5dd07 270deg 360deg);
+}
+.gradient__repeat--conic {
+  background-image: repeating-conic-gradient(from 45deg at 50% 50%, #f30ab9 0deg 10deg, #0ce680 10deg 20deg);
+}
+.gradient__animated--conic {
+  background-image: repeating-conic-gradient(from var(--angle), #f30ab9 0deg 10deg, #0ce680 10deg 20deg);
+  animation-name: rotet;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes rotet {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

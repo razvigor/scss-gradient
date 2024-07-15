@@ -1,0 +1,34 @@
+@use '../abstract/mixins' as *;
+@use '../abstract/variables' as *;
+
+.gradient {
+  @include flex;
+  & > div {
+    flex: 1 1 0;
+    height: $size;
+    border: 1px solid $secondary-color;
+    display: flex;
+    min-width: $size;
+  }
+  &__linear {
+    @include linear;
+  }
+  &__repeat--linear {
+    @include repeat-linear;
+  }
+  &__radial {
+    @include radial;
+  }
+  &__repeat--radial {
+    @include repeat-radial;
+  }
+  &__conic {
+    @include conic;
+  }
+  &__repeat--conic {
+    @include repeat-conic;
+  }
+  &__animated--conic {
+    @include animated-conic
+  }
+}
